@@ -42,7 +42,7 @@ public class GroupProject_01_DaltonBrandonKurshawKyler
      double grossProfit = calculateGrossProfit(totalSell, feeChargeSell);
      double netProfit = calculateNetProfit(grossProfit, totalPaid);
      displaySummary(totalPaid, feeChargePurchase, shares, stockValuePurchase, 
-             stockValueSell, grossProfit, feeChargeSell, 
+             stockValueSell, stockSold,  grossProfit, feeChargeSell, 
      sharesAfterSale, stockValueAfterSale, netProfit);   
      }
      else
@@ -69,7 +69,7 @@ public class GroupProject_01_DaltonBrandonKurshawKyler
      double grossProfit = calculateGrossProfit(totalSell, feeChargeSell);
      double netProfit = calculateNetProfit(grossProfit, totalPaid);
      displaySummary(totalPaid, feeChargePurchase, shares, stockValuePurchase, 
-             stockValueSell, grossProfit, feeChargeSell, 
+             stockValueSell, stockSold , grossProfit, feeChargeSell, 
      sharesAfterSale, stockValueAfterSale, netProfit);
      }
      
@@ -278,7 +278,7 @@ public class GroupProject_01_DaltonBrandonKurshawKyler
     }
     public static void displaySummary(double totalPaid ,
             double feeChargePurchase , double shares , double stockValuePurchase
-     , double stockValueSell , double grossProfit , double feeChargeSell , 
+     , double stockValueSell , double stockSold , double grossProfit , double feeChargeSell , 
      double sharesAfterSale , double stockValueAfterSale , double netProfit)
     {
         JOptionPane.showMessageDialog(null,
@@ -290,6 +290,7 @@ public class GroupProject_01_DaltonBrandonKurshawKyler
         + "\n-------------------Selling Summary-------------------"
         + "\nNumber of shares owned before sale: " + shares
         + String.format(" stock value: $%,.2f", stockValueSell)
+        + String.format("\nNumber of shares being sold: %,.2f", stockSold)        
         + String.format("\nAmount stock sold for: $%,.2f", grossProfit)
         + String.format("\nSelling fee charge: $%,.2f", feeChargeSell)
         + String.format("\nNumber of shares owned after sale: %,.1f", 
